@@ -1,0 +1,231 @@
+# RoME News
+
+# RoME 0.2.3 (2026-04-21)
+
+* CRAN submission compliance updates:
+  * Refactored `DESCRIPTION`: Updated Authors@R format, added Language field, and moved `shinyjs` and `svDialogs` to `Suggests`.
+  * Updated `.Rd` documentation: Fixed unclosed `\references{}` brackets, resolved 'Invalid URL' checks, corrected syntax errors, and removed typos across all manual files.
+  * Replaced `packageVersion()` with `meta$Version` in `inst/CITATION` for compatibility when the package is not yet installed.
+  * Ensured strict adherence to CRAN repository policies regarding files written outside of `tempdir()`.
+* Bug fixes and robustness improvements:
+  * Fixed a critical crash in `check_individual_weightTE()` caused by missing `LENGTH_CLASSES_CODE` values (handled `NA` and added safety checks).
+  * Resolved a logic error in the plotting routine of `check_individual_weightTE()` where incorrect length-weight parameters were applied due to an index bug.
+  * Added robustness to plotting functions to skip species/sex combinations with no valid data points.
+
+# RoME 0.2.2 (2026-03-26)
+
+* Improved `check_spawning_period()`: TA and TC records are now matched on
+  both `HAUL_NUMBER` and `COUNTRY`, avoiding incorrect month assignments
+  when haul numbers are shared across countries.
+* Added `run_RoME_app()`: launches an embedded Shiny graphical user interface
+  for running RoME analyses directly from the package environment.
+
+# RoME 0.2.1
+
+* Included the stratification schema table used in the Black Sea (Romania and
+  Bulgaria) for the rapana whelk beam trawl survey: `stratification_scheme_rapana`.
+
+# RoME 0.2.0
+
+* RDBFIS III revision. Major improvements to `check_weight()`,
+  `check_length()`, `check_individual_weightTC()`, `check_smallest_mature()`,
+  `check_species_TBTC()`, `check_spawning_period()`, `check_dictionary()`,
+  and `check_raising()`. New functions: `check_swept_area()` and
+  `plot_abundance()`. Updated `check_distance()` to use `geosphere::distGeo()`.
+
+# RoME 0.1.x -- Historical fixes
+
+Fixes 0.1.2
+-----
+1. Each example has been reduced to less than 5 seconds of time to run.
+
+Fixes 0.1.3
+-----
+1. Eliminated  Namespace with empty importFrom: 'grDevices'
+2. Corrected the wrong pintsize in function check_position.
+3. Eliminated the folders created in all the RoME functions from the tempdir.
+
+Fixes 0.1.4
+-----
+1. Corrected the wrong pintsize in function check_temperature.
+2. Revised again for eliminating the folders created in all the RoME functions from the tempdir.
+
+Fixes 0.1.5
+-----
+1. Corrected the wrong pointsize in function check_weight.
+
+Fixes 0.1.6
+-----
+1. Eliminated detritus from the temporary directories.
+
+Fixes 0.1.7
+-----
+1. Changed the reference version of R indicated in the file DESCRIPTION.
+
+Fixes 0.1.8
+-----
+1. Solved the error in check_dm for saving the Logfile.
+
+Fixes 0.1.9
+-----
+1. Space removed from filenames of the files stored in the temporary directory.
+
+Fixes 0.1.10
+-----
+1. Addressed the problem of nested temporary directories in Linux.
+
+Fixes 0.1.11
+-----
+1. Error solved in check_dm.Rd example
+
+Fixes 0.1.12
+-----
+1. Solved the problems of nested temporary directories in Linux.
+
+Fixes 0.1.13
+-----
+1. Solved other problems of nested temporary directories in Linux.
+
+Fixes 0.1.14
+-----
+1. Fixed problems of recursive directories creation in Debian with check_dm() function.
+
+Fixes 0.1.15
+-----
+1. Revision of Documentation Rd files following the .
+2. Revision of contributors description in Documentation file
+
+Fixes 0.1.16
+-----
+1. Inclusion of length-weight dataframe into RoME() parameters
+
+Fixes 0.1.17
+-----
+1. Modification of RoME function to allow estimation of R sufi files from both TC and TE tables
+
+Fixes 0.1.18
+-----
+1. Improvement of output plots using functions of ggplot2 package 
+
+Fixes 0.1.19
+-----
+1. issue in check_area function corrected
+
+Fixes 0.1.20
+-----
+1. inclusion of new functions (e.g. RoMEcc) to adapt the package to work with the RDBFID database
+
+Fixes 0.1.21
+-----
+1. inclusion of new function to convert RDBFIS headers to MEDITS format
+
+Fixes 0.1.23
+-----
+1. check dictionary function allows also NA values
+
+Fixes 0.1.24
+-----
+1. included country in filtering TB and TC data in check_raising
+
+Fixes 0.1.26
+-----
+1. improvement of check_raising outputs
+
+Fixes 0.1.27
+-----
+1. bugs fixed
+
+Fixes 0.1.28
+-----
+1. included the zip parameter in RoMEcc
+2. replaced the zip function with the "zip" library one
+
+Fixes 0.1.29
+-----
+1. check_haul_species_TCTB function modified to produce Critical_Error file
+2. checkHeader function modified to produce Critical_Error file
+3. check_class function modified to produce Critical_Error file
+4. check_consistencyTA_duration: identify errors if SHOOTING_TIME or HAULING_TIME fields are not integer
+5. inclusion of the function RoMEBScc specifically working on Black Sea MEDITS-like data
+
+Fixes 0.1.30
+-----
+1. New stratification_ _scheme table
+
+Fixes 0.1.31
+-----
+1. generalization of check_stratum
+2. optimization of check_weight
+
+Fixes 0.1.34
+-----
+1. optimization of zip saving
+2. optimization of temporary directory use
+
+Fixes 0.1.35
+-----
+1. improved management of errors in check_length function
+
+Fixes 0.1.36
+-----
+1. quasi-identical records' check output changed in warning message instead of error
+
+Fixes 0.1.37
+-----
+1. warning messages modified in check_bridles_length function
+
+Fixes 0.1.38
+-----
+1. header.conversion function modified for the measuring_system_salinity field in input file (TA)
+
+Fixes 0.1.39
+-----
+1. improvement of check_individual_weightTE function
+
+Fixes 0.2.0
+-----
+0. RDBFIS III Fixes 
+1. check_weight() now logs detailed records of species with mean weights outside reference ranges into a CSV file instead of writing extensive messages in the .dat log, ensuring clearer logs and easier downstream analysis. Plots are now saved exclusively to files and are no longer displayed interactively, and species plots are limited to those with at least 5 observations to reduce unnecessary graph generation. The function was adapted to work with the updated DataTargetSpecies table
+
+2. check_length() now saves all detailed inconsistencies into a CSV file instead of writing verbose messages in the .dat log, improving clarity and data traceability, using the new updated DataTargetSpecies table.
+
+3. check_individual_weightTC changed to save the table for the comparison between the estimated  vs observed weights in TC.
+
+4. the check_smallest_mature function was adapted to work with the updated DataTargetSpecies table
+
+5. check_smallest_mature: Improved handling of non-numeric values in Maturity_parameters and introduced a 10% buffer when checking lengths. Added a CSV output listing all records where mature individuals are smaller than reference sizes, including the threshold size and bibliographic references. The function has also been adapted to the new format of DataTargetSpecies.
+
+6. check_species_TBTC function improved with more robust data filtering checks and streamlined log file content to reduce verbosity. The function has also been adapted to the new format of DataTargetSpecies.
+
+7. check_spawning_period now logs all maturity-stage consistency warnings into a dedicated CSV file rather than filling the .dat log with verbose messages, improving traceability and downstream analyses. The function robustly handles missing (NA) values in both maturity parameters and survey data to avoid false positives. It now separates warnings for immature individuals observed within the spawning period but above size thresholds, and for mature individuals found outside the spawning period, distinguishing whether they fall below bibliographic size limits. CSV outputs include comprehensive details such as spawning months, size thresholds, and the type of inconsistency detected. The function has been adapted to work with the updated DataTargetSpecies table.
+
+8. check_dictionary() now reports the actual invalid value in every log entry. Previously it said "value not allowed for X"; now each line includes the offending string or NA (e.g., "Haul 109: value 'XYZ' not allowed for COURSE in TA"), and messages are batched into a single writeLines() call to eliminate hundreds of small I/O operations. The function was dramatically rebuilt to optimize computational time, achieving a runtime reduction of >90% for this routine (e.g., from 12.91 s down to 0.07 s).
+
+9. check_length(): the internal per-row loop has been replaced with vectorized index computations (which() + match()), and all I/O is consolidated into single write.table() and write() calls. These changes preserve the original logic and output formats (including handling of missing, negative, and out-of-range classes with the updated DataTargetSpecies), while delivering a around 66% reduction in the routine's execution time (e.g., from 2.77 s down to 0.93 s).
+
+10. Replaced all class(...) == checks with inherits(...) to improve code robustness and avoid R CMD check notes. Fixed documentation mismatches, ensuring consistency between code default arguments and Rd files. Corrected a misplaced brace in the Rd documentation of check_position_in_Med(), resolving a note from R CMD check.
+
+11. NEW function: check_swept_area 
+the function checks the key swept-area field used later to standardise abundance indices. It scans the TA file for the chosen year, flags and removes any haul whose wing opening, distance or depth is missing, non-numeric or would lead to an impossible swept-area value, and logs each problem haul in detail. By doing this before abundance calculations begin, the function ensures that every density estimate rests on a solid, verifiable swept-area input.
+
+12. updated function: check_raising 
+check_raising() has been rewritten to use native dplyr operations, which removes the old explicit loops and makes the code markedly faster. The routine now calculates the raising factor molt for every TC subsample and records, one line at a time, any situation in which that ratio falls below one. It also adds a new consistency test that compares the grand total raised from TC with both the sex-specific counts and the overall total reported in TB, logging every discrepancy with haul and species identifiers so that problematic records are easy to trace. Rows that lack swept-area information or contain invalid totals are discarded but never cause the function to stop; they are simply listed in the log file. In line with the behaviour of plot_abundance(), the function now returns TRUE when no inconsistencies are found and FALSE otherwise, while continuing execution to the end in all cases.
+
+13. NEW function: plot_abundance()
+Introduces an automated routine that reads TA and TB tables, computes swept-area-standardised abundance indices (n/km^2) per haul and species, applies quality-control filters (swept area missing/zero, invalid totals, minimum number of hauls), and produces box-plots in chunks of maximum 36 species each. All images are saved to Graphs/Abundance and a detailed logfile is written to Logfiles/. 
+
+14. updated function: check_distance()
+Replaced the custom distance calculation with the function geosphere::distGeo() for computing geodesic distances between shooting and hauling coordinates.
+This modification avoids the issue of estimating zero distances when the same value is reported for both shooting and hauling longitude or latitude in a given haul.
+Computational efficiency was improved by vectorizing the distance computation using mapply() instead of a row-wise loop.
+
+Fixes 0.2.1
+-----
+0. RDBFIS III Fixes 
+1. Included the stratification schema table used in the Black Sea, by Romania and Bulgaria, in the rana whelk beam trawl survey: stratification_scheme_rapana.
+
+Fixes 0.2.2 (26/03/2026)
+-----
+Improved check_spawning_period() by matching TA and TC records on both HAUL_NUMBER and COUNTRY, avoiding incorrect month assignments when haul numbers are shared across countries.
+
+Added an embedded Shiny application to the package: run_RoME_app(). It provides a graphical user interface for running RoME analyses directly from the package environment.

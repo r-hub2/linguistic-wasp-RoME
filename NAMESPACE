@@ -1,0 +1,39 @@
+exportPattern("^[[:alpha:]]+")
+importFrom(rnaturalearth, ne_countries, ne_download)
+importFrom(timeDate, timeDate, difftimeDate)
+importFrom(zip, zip)
+importFrom(stats, aggregate)
+importFrom(grDevices, dev.off, tiff, pdf, dev.cur, dev.new, graphics.off, jpeg)
+importFrom(graphics, legend, par, text, mtext)
+importFrom(utils, read.csv, globalVariables, write.table)
+importFrom(stringr, str_extract, str_length)
+importFrom(ggplot2, aes, geom_point, geom_sf, ggplot, ggsave, ggtitle, theme, labs,
+           element_blank, geom_rect, element_rect, element_text, scale_fill_manual,
+           scale_fill_identity, theme_bw, coord_sf, geom_boxplot, facet_wrap, coord_flip)
+importFrom(graphics, lines)
+importFrom(ggrepel, geom_text_repel)
+importFrom(magrittr,"%>%")
+importFrom(dplyr,
+           mutate,
+           across,
+           group_by,
+           summarise,
+           select,
+           inner_join,
+           anti_join,
+           filter,
+           n_distinct,
+           if_else,
+           tibble,
+           all_of,
+           pull,
+           arrange,
+           n)
+importFrom(geosphere, distGeo)
+importFrom(maps, map)
+importFrom(sp, coordinates, proj4string, over)
+## NOTE: rnaturalearthdata is a data-only package; a full import is the only
+## practical way to make its spatial datasets available at runtime.
+## This import() is intentional and accepted by CRAN for data packages.
+import(rnaturalearthdata)
+
