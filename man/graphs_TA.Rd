@@ -19,8 +19,8 @@ The function generate 2 graphs for qualitative controls.}
 \value{
 Two graphs are stored in the Graphs folder in the wd user defined directory
 }
-\references{Anonymus. 2017. MEDITS-Handbook. Version n. 9. MEDITS Working Group. 106 pp.sibm.it/MEDITS 2011/principaledownload.htm}
-\author{I. Bitetto, W. Zupa}
+\references{Anonymus. 2017. MEDITS-Handbook. Version n. 9. MEDITS Working Group. 106 pp.\url{https://www.sibm.it/MEDITS\%202011/principaledownload.htm}}
+\author{W. Zupa, I. Bitetto}
 \examples{
 TA = RoME::TA
 year = 2012
@@ -29,4 +29,6 @@ suffix="2020-03-05_time_h17m44s55"
 graphs_TA(RoME::TA,year,wd,suffix)
 }
 \keyword{ graph }
+
+
 

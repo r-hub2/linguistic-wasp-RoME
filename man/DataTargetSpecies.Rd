@@ -46,4 +46,7 @@ Literature and other data sources.
 data(DataTargetSpecies)
 head(DataTargetSpecies)
 }
+\author{W. Zupa}
 \keyword{datasets}
+
+

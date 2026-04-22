@@ -27,7 +27,7 @@ Warnings are saved in a logfile located in the \code{Logfiles} subdirectory of t
 }
 \references{
 Anonymous. 2017. MEDITS-Handbook. Version n. 9. MEDITS Working Group. 106 pp. \cr
-\url{sibm.it/MEDITS 2011/principaledownload.htm} \cr
+\url{https://www.sibm.it/MEDITS\%202011/principaledownload.htm} \cr
 
 Hijmans, R. J. (2019). \emph{geosphere: Spherical Trigonometry}. R package version 1.5-10. \cr
 \url{https://cran.r-project.org/package=geosphere}
@@ -40,3 +40,5 @@ year <- 2007
 check_distance(RoME::TA, year, wd, suffix)
 }
 \keyword{quality-control}
+
+

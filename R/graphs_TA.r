@@ -53,7 +53,6 @@ graphs_TA<-function(DataTA,year,wd,suffix){
   old_par$omi <- par()$omi
 
   on.exit(c(par(mfrow=old_par$mfrow,mar=old_par$mar,fin=old_par$fin,mai=old_par$mai,omi=old_par$omi),options(warn=oldoptions)))
-  options(warn=-1)
 
 suppressWarnings(
 {
@@ -84,3 +83,5 @@ suppressWarnings(
   # unlink(file.path(tempdir(),"Graphs"),recursive=T)
   #   }#unlink(file.path(tempdir(),"files R-Sufi"),recursive=T)
 }
+
+

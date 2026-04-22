@@ -1,7 +1,6 @@
 \name{RoMEcc}
 \alias{RoMEcc}
-\title{
-R code to perform multiple checks on MEDITS Survey data (TA, TB, TC, TE and TL files) - continuous checks}
+\title{Continuous Quality Checks on MEDITS Trawl Survey Data}
 \description{
 The function calls all the functions included in the package in an ordered way to perform a complete quality check of TX data available. The check is performed simultaneously on the files that can contain also data of more than one year. Unlike the \code{RoME} function, \code{RoMEcc} does not stop at the first detected error, allowing user to correct data. Instead, it checks all the data and returns a report on the errors found, as well as compiling a detailed log file.}
 \usage{
@@ -38,7 +37,7 @@ Some functions included in the 'RoME' library and used by \code{RoME} function n
 \value{
 The function does not correct data, but it detects the errors, warning the user that there is the possibility of one or more errors, specifying the type of the error and easing the data correction. If parameter \code{verbose=TRUE} returns a series of text output in console to let the user to trace the state of the checks. All the output of the functions are stored in the user defined working directory  \code{wd} and in the sub-directory there resident. In the Lofile subfolder are stored the logfiles of each run of the function.
 }
-\references{Anonymus. 2017. MEDITS-Handbook. Version n. 9. MEDITS Working Group. 106 pp. sibm.it/MEDITS 2011/principaledownload.htm}
+\references{Anonymus. 2017. MEDITS-Handbook. Version n. 9. MEDITS Working Group. 106 pp. \url{https://www.sibm.it/MEDITS\%202011/principaledownload.htm}}
 \author{W. Zupa,I. Bitetto}
 \examples{
 \donttest{
@@ -58,3 +57,5 @@ RoMEcc(DataTA, DataTB,DataTC,DataTE,DataTL, wd, suffix,
 }
 
 \keyword{error}
+
+
